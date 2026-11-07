@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Order()"></button>
+    <div id="display"></div>
+    <div id="item"></div>
+    <div id="price"></div>
+    <script>
+        let order = {
+            item:"Pizza",
+            price: 20,  
+            shop:"My snack shop"
+        };
+
+        function Order(){
+            let text = JSON.stringify(order)
+             let obj = JSON.parse(text)
+
+             document.getElementById("display").innerHTML = text        
+             document.getElementById("item").innerHTML = obj.item
+             document.getElementById("price").innerHTML = obj.price
+            }
+              
+            async function f() {
+                document.getElementById("status").innerHTML = "Order recived"
+                
+                setTimeout(function(){
+                    document.getElementById("status").innerHTML = "Kitchen is preparing"
+                }, 3000)
+
+                   
+                setTimeout(function(){
+                    document.getElementById("status").innerHTML = "Food is ready"
+                }, 5000)
+            }
+
+</script>
+</body>
+</html>
